@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,500,700|Inconsolata:400,700);
+
+$base-font-family:  'Work Sans', Geneva, Verdana, sans-serif;
+$base-font-size:    16px;
+$base-font-weight:  400;
+$base-line-height:  1.5;
+
+/**
+ * Font Size Scale
+ * 1.125 ratio (major second)
+ * 1.1em (17.6px) base
+ * As calculated on:
+ * http://www.modularscale.com/?1.1&em&1.125&web&table
+ */
+
+$ms16:    7.242em;
+$ms15:    6.437em;
+$ms14:    5.722em;
+$ms13:    5.086em;
+$ms12:    4.521em;
+$ms11:    4.019em;
+$ms10:    3.572em;
+$ms9:     3.175em;
+$ms8:     2.822em;
+$ms7:     2.509em;
+$ms6:     2.23em;
+$ms5:     1.982em;
+$ms4:     1.762em;
+$ms3:     1.566em;
+$ms2:     1.392em;
+$ms1:     1.238em;
+$ms0:     1.1em;
+$ms-1:    0.978em;
+$ms-2:    0.869em;
+$ms-3:    0.773em;
+$ms-4:    0.687em;
+$ms-5:    0.61em;
+$ms-6:    0.543em;
+
+.ms16       { font-size: 7.242em; }
+.ms15       { font-size: 6.437em; }
+.ms14       { font-size: 5.722em; }
+.ms13       { font-size: 5.086em; }
+.ms12       { font-size: 4.521em; }
+.ms11       { font-size: 4.019em; }
+.ms10       { font-size: 3.572em; }
+.ms9        { font-size: 3.175em; }
+.ms8        { font-size: 2.822em; }
+.ms7        { font-size: 2.509em; }
+.ms6        { font-size: 2.23em; }
+.ms5        { font-size: 1.982em; }
+.ms4        { font-size: 1.762em; }
+.ms3        { font-size: 1.566em; }
+.ms2        { font-size: 1.392em; }
+.ms1        { font-size: 1.238em; }
+.ms0        { font-size: 1.1em; }
+.ms-1       { font-size: 0.978em; }
+.ms-2       { font-size: 0.869em; }
+.ms-3       { font-size: 0.773em; }
+.ms-4       { font-size: 0.687em; }
+.ms-5       { font-size: 0.61em; }
+.ms-6       { font-size: 0.543em; }
