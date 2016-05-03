@@ -1,0 +1,38 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: HumanOps
+email: "-"
+description: > # this means to ignore newlines until "baseurl:"
+    The HumanOps website.
+baseurl: "/website" # the subpath of your site, e.g. /blog
+url: "-" # the base hostname & protocol for your site
+twitter_username: humanops
+github_username:  humanops
+
+# Build settings
+markdown: kramdown
+
+# use GitHub flavoured markdown
+kramdown:
+    input: GFM
+    hard_wrap: false
+
+gems:
+    - jekyll-coffeescript
+    - jekyll-paginate
+
+# set the rendering directory to the root css/ to fix css not being rendered
+sass:
+    css_dir: css
+
+collections:
+    sections:
+        output: true
+    coffeescript:
+        output: true
