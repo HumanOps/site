@@ -76,7 +76,7 @@
         margin-bottom: 0;
         text-align: center;
         font-family: $secondary-font-family;
-        font-size: $ms3;
+        font-size: $ms4;
 
         .terminal-location {
             color: $orange;
@@ -97,4 +97,110 @@
             margin-left: -.4em;
         }
     }
+}
+
+.section {
+    padding-top: $spacing-unit * 6;
+
+    .wrapper {
+        padding: 0 80px;
+    }
+
+    &.section--center {
+        text-align: center;
+
+        .section-sub-header,
+        .section-content {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.wrapper {
+    &.wrapper--dashed-top {
+        padding-top: $spacing-unit * 5;
+        border-top: 2px dashed $grey;
+    }
+}
+
+.section-header {
+    position: relative;
+
+    h2 {
+        font-weight: 500;
+        font-size: $ms10;
+    }
+
+    &.section-header--underline {
+        padding-bottom: $spacing-unit * 1.5;
+
+        &:after {
+            content: '';
+            position: absolute;
+            height: 5px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            background-color: $grey;
+        }
+    }
+}
+
+
+
+.section-sub-header {
+    width: 90%;
+    margin-top: $spacing-unit * 2;
+    line-height: 2.7em;
+
+    p {
+        font-size: $ms3;
+    }
+    svg {
+        width: auto;
+        height: 36px;
+        vertical-align: -.2em;
+        margin: 0 $spacing-unit/2.5 0 $spacing-unit/4;
+    }
+
+    &.section-sub-header--tint {
+        color: $grey;
+    }
+}
+
+.section-content {
+    width: 80%;
+    margin-top: $spacing-unit * 2.5;
+    @extend %clearfix;
+
+    p {
+        font-size: $ms1;
+    }
+}
+
+
+
+.section-whats-wrong .section-header--underline:after {
+    background-color: $orange-1;
+}
+
+.section-how-to-change .section-header--underline:after {
+    background-color: $blue-3;
+}
+
+.section-whos-with-us .section-header--underline:after {
+    background-color: $blue-1;
+}
+
+.section-whos-with-us form {
+    margin-top: $spacing-unit;
+}
+
+.section-what-can-we-do .wrapper--dashed-top {
+    border-color: $blue-1;
+}
+
+.section-what-can-we-do .section-sub-header--tint {
+    color: $blue;
 }

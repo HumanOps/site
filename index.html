@@ -20,4 +20,12 @@ layout: default
     </div>
   </section>
 
+
+      {% for section in site.sections %}
+        <a name="{{ section.slug}}"></a>
+        <section class="section section-{{ section.slug }} {{ section.align }}">
+            {{ section.content }}
+        </section>
+    {% endfor %}
+
 </div>
