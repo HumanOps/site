@@ -1,0 +1,100 @@
+/**
+ * Site header
+ */
+.site-header {
+    position: relative;
+    @extend %clearfix;
+
+    .social-media-list {
+        float: right;
+        margin: 0;
+        list-style: none;
+        padding: $spacing-unit $spacing-unit * 1.5 0 0;
+
+        .icon > svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    .social-item {
+        float: left;
+        margin-left: $spacing-unit;
+    }
+
+    .username {
+        display: none;
+    }
+}
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+    height: 0;
+    padding-bottom: 45%;
+    background: url("../assets/images/sleeping-cat-ops.jpg") no-repeat;
+    @include image-2x("../assets/images/sleeping-cat-ops@2x.jpg", 1441px, 649px);
+    background-size: cover;
+}
+
+
+/**
+ * Page content
+ */
+.page-content {
+}
+
+.section-heading {
+
+    .top {
+        margin: $spacing-unit 0 $spacing-unit * 2.5;
+    }
+
+    .page-heading {
+        text-align: center;
+
+        span {
+            display: block;
+            text-indent: -9999px;
+            height: 0;
+        }
+
+        > svg {
+            width: 770px;
+            height: 269px;
+        }
+    }
+
+    .bottom {
+        padding: $spacing-unit * 2.25 0;
+        background: $black1;
+    }
+
+    .sub-heading {
+        margin-bottom: 0;
+        text-align: center;
+        font-family: $secondary-font-family;
+        font-size: $ms3;
+
+        .terminal-location {
+            color: $orange;
+        }
+        .terminal-command {
+            color: $orange-1;
+            b {
+                color: $bg-color;
+            }
+        }
+        .terminal-cursor {
+            display: inline-block;
+            width: .45em;
+            height: 1em;
+            background-color: $orange-1;
+            opacity: .5;
+            vertical-align: -.15em;
+            margin-left: -.4em;
+        }
+    }
+}

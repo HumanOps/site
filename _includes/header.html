@@ -1,2 +1,39 @@
 <header class="site-header">
+
+    <ul class="social-media-list">
+
+      {% if site.twitter_username %}
+      <li class="social-item">
+        {% include icon-twitter-grey.html username=site.twitter_username %}
+      </li>
+      {% endif %}
+
+      {% if site.facebook_username %}
+      <li class="social-item">
+        {% include icon-facebook-grey.html username=site.facebook_username %}
+      </li>
+      {% endif %}
+
+      {% if site.github_username %}
+      <li class="social-item">
+        {% include icon-github-grey.html username=site.github_username %}
+      </li>
+      {% endif %}
+
+      {% comment %}
+
+        {% if site.slack_username %}
+        <li class="social-item">
+          {% include icon-slack-grey.html username=site.slack_username text=site.slug %}
+        </li>
+        {% endif %}
+
+        <li class="social-item">
+          {% include icon-meetup-grey.html url="http://www.meetup.com/it-IT/HumanOps-London/" text="meetup" %}
+        </li>
+
+      {% endcomment %}
+
+    </ul>
+
 </header>
