@@ -7,6 +7,7 @@
 
 # Site settings
 title: HumanOps
+slug: humanops
 email: "-"
 description: > # this means to ignore newlines until "baseurl:"
     HumanOps is a set of principles which focus on the human aspects of running infrastructure.
@@ -15,7 +16,9 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "/site" # the subpath of your site, e.g. /blog
 url: "http://www.humanops.com" # the base hostname & protocol for your site
 twitter_username: humanops
-github_username:  humanops
+github_username: humanops
+slack_username: humanops
+facebook_username: humanops
 
 # Build settings
 markdown: kramdown
