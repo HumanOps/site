@@ -1,0 +1,59 @@
+---
+slug: get-in-touch
+align: section--center
+---
+
+<div class="wrapper">
+    <div class="triangles-band">{% include triangles-band.svg %}</div>
+
+    <header class="section-header">
+        <h2 class="section-title" itemprop="headline">Get in touch</h2>
+    </header>
+
+    <div class="section-sub-header section-sub-header--tint" itemprop="subheadline">
+        <p>
+            Get in touch to help us make Ops human.
+        </p>
+    </div>
+
+    <div class="section-content actions-box" itemprop="sectionBody">
+
+        <div class="social-media-links">
+
+            {% if site.twitter_username %}
+                <span class="social-item">
+                    {% include icon-twitter.html username=site.twitter_username %}
+                </span>
+            {% endif %}
+
+            {% if site.slack_username %}
+                <span class="social-item">
+                    {% include icon-slack.html username=site.slack_username text=site.slug %}
+                </span>
+            {% endif %}
+
+            <span class="social-item">
+                {% include icon-meetup.html url="http://www.meetup.com/it-IT/HumanOps-London/" text="meetup" %}
+            </span>
+
+            {% comment %}
+
+                {% if site.facebook_username %}
+                    <span class="social-item">
+                        {% include icon-facebook.html username=site.facebook_username %}
+                    </span>
+                {% endif %}
+
+                {% if site.github_username %}
+                    <span class="social-item">
+                        {% include icon-github.html username=site.github_username %}
+                    </span>
+                {% endif %}
+
+            {% endcomment %}
+
+        </div>
+
+    </div>
+
+</div>

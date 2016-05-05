@@ -15,26 +15,36 @@ align: section--center
         </p>
     </div>
 
-    <div class="section-content" itemprop="sectionBody">
-        <div class="col-1-3 item">
+    <div class="section-content section-content--distant actions-box" itemprop="sectionBody">
+        <div class="col-1-3 action-item action-item--meetup">
             {% include icon-meetup.svg %}
             <h3>London</h3>
-            <p class="item-text">Thu May 19, 2016</p>
-            <p class="item-text">@ The Financial Times</p>
-            <a class="btn" href="" title="">Join and RSVP</a>
+            <p class="item-text">
+                {% include icon-calendar.svg %} Thu May 19, 2016
+                <br />
+                {% include icon-location.svg %} The Financial Times
+            </p>
+            <a target="_blank" class="btn" href="http://www.meetup.com/HumanOps-London/events/229460050/" title="http://www.meetup.com/HumanOps-London/events/229460050/">Join and RSVP</a>
         </div>
-        <div class="col-1-3">
+        <div class="col-1-3 action-item action-item--meetup">
             {% include icon-meetup.svg %}
             <h3>San Francisco</h3>
-            <p class="item-text">Organizers</p>
-            <p class="item-text">+ help appreciated</p>
-            <a class="btn" href="" title="">Get on board</a>
+            <p class="item-text">
+                Organizers
+                <br />
+                + help appreciated
+            </p>
+            <a target="_blank" class="btn" href="http://www.meetup.com/HumanOps-London/" title="http://www.meetup.com/HumanOps-London/">Get on board</a>
         </div>
-        <div class="col-1-3">
+        <div class="col-1-3 action-item action-item--contribute">
             {% include logo-github.svg %}
             <h3>Anywhere</h3>
-            <p class="item-text">Collaborate to shape it.</p>
-            <a class="btn" href="" title="">GitHub repo</a>
+            <p class="item-text">
+                Collaborate
+                <br />
+                to shape it.
+            </p>
+            <a target="_blank" class="btn" href="https://github.com/HumanOps/HumanOps" title="https://github.com/HumanOps/HumanOps">GitHub repo</a>
         </div>
     </div>
 

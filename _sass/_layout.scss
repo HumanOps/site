@@ -4,27 +4,6 @@
 .site-header {
     position: relative;
     @extend %clearfix;
-
-    .social-media-list {
-        float: right;
-        margin: 0;
-        list-style: none;
-        padding: $spacing-unit $spacing-unit * 1.5 0 0;
-
-        .icon > svg {
-            width: 28px;
-            height: 28px;
-        }
-    }
-
-    .social-item {
-        float: left;
-        margin-left: $spacing-unit;
-    }
-
-    .username {
-        display: none;
-    }
 }
 
 
@@ -102,6 +81,10 @@
 .section {
     padding-top: $spacing-unit * 6;
 
+    &:last-child {
+        padding-bottom: $spacing-unit * 6;
+    }
+
     .wrapper {
         padding: 0 80px;
     }
@@ -121,6 +104,24 @@
     &.wrapper--dashed-top {
         padding-top: $spacing-unit * 5;
         border-top: 2px dashed $grey;
+    }
+
+    .triangles-band {
+        margin-bottom: $spacing-unit * 3.5;
+
+        svg {
+            width: auto;
+            height: 24px;
+        }
+    }
+
+    &.wrapper--funneling {
+        .section-sub-header {
+            width: 90%;
+        }
+        .section-content {
+            width: 80%;
+        }
     }
 }
 
@@ -145,12 +146,34 @@
             background-color: $grey;
         }
     }
+
+    &.section-header--underline-small {
+        padding-bottom: $spacing-unit;
+
+        &:after {
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            background-color: $grey;
+        }
+    }
+
+    &.section-header--small {
+        display: inline-block;
+        padding-left: 4em;
+        padding-right: 4em;
+        width: auto;
+
+        h2 {
+            font-size: $ms5;
+        }
+    }
 }
 
-
-
 .section-sub-header {
-    width: 90%;
     margin-top: $spacing-unit * 2;
     line-height: 2.7em;
 
@@ -167,19 +190,205 @@
     &.section-sub-header--tint {
         color: $grey;
     }
-}
 
-.section-content {
-    width: 80%;
-    margin-top: $spacing-unit * 2.5;
-    @extend %clearfix;
-
-    p {
-        font-size: $ms1;
+    &.section-sub-header--small {
+        p {
+            font-size: $ms1;
+        }
     }
 }
 
+.section-content {
+    margin-top: $spacing-unit * 2.5;
+    @extend %clearfix;
 
+    &.section-content--distant {
+        margin-top: $spacing-unit * 3.5;
+    }
+
+    p {
+        letter-spacing: 0.01em;
+        font-size: $ms1;
+    }
+
+    .gist {
+        width: 100%;
+        margin: $spacing-unit * 3 auto 0;
+    }
+}
+
+.social-media-list-grey {
+    float: right;
+    margin: 0;
+    list-style: none;
+    padding: $spacing-unit $spacing-unit * 1.5 0 0;
+
+    .icon > svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .social-item {
+        float: left;
+        margin-left: $spacing-unit;
+    }
+
+    .username {
+        display: none;
+    }
+
+    a {
+        opacity: 1;
+        @include transition(opacity .15s);
+
+        &:hover {
+            opacity: .8;
+        }
+
+        &:active {
+            opacity: 1;
+        }
+    }
+}
+
+.social-media-links {
+
+    .social-item {
+        display: inline-block;
+        margin-right: $spacing-unit * 3;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            display: inline-block;
+            color: $black1;
+            text-decoration: none;
+            @include transition(color .15s);
+
+            &:hover {
+                color: $blue-2;
+
+                svg, svg *:not(rect) {
+                    @include transition(color .15s);
+                    fill: $blue-2;
+                }
+            }
+        }
+    }
+
+    .icon {
+        display: inline-block;
+        height: 36px;
+        vertical-align: .4em;
+        margin-right: .5em;
+
+        > svg {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+    .username {
+        font-weight: 300;
+        font-size: $ms6;
+    }
+}
+
+.actions-box {
+    .action-item {
+        svg {
+            width: auto;
+            height: 100px;
+        }
+
+        h3 {
+            margin: $spacing-unit 0;
+            font-weight: 500;
+            font-size: $ms6;
+        }
+
+        .item-text {
+            font-weight: 300;
+            font-size: $ms2;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                vertical-align: -.2em;
+                margin-right: .2em;
+            }
+        }
+
+        .btn {
+            margin-top: $spacing-unit * 1.2;
+            font-size: $ms0;
+        }
+    }
+}
+
+a.btn--github-logo {
+    margin-top: $spacing-unit * 2;
+    font-size: $ms0;
+
+    svg {
+        width: auto;
+        height: 48px;
+        margin-top: -14px;
+    }
+}
+
+.articles {
+    margin-bottom: $spacing-unit * 2;
+    @extend %clearfix;
+
+    .article {
+        margin-bottom: $spacing-unit * 1;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    h3 {
+        font-weight: 300;
+        font-size: $ms1;
+        margin-bottom: $spacing-unit / 5;
+    }
+
+    .article-link {
+        display: inline-block;
+        font-size: $ms-3;
+        white-space: nowrap;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.people-involved {
+    list-style: none;
+    margin: 0;
+    font-size: $ms1;
+
+    .person {
+        margin-bottom: .4em;
+        font-weight: 300;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            font-weight: 400;
+        }
+
+        span {
+            font-weight: 500;
+        }
+    }
+}
 
 .section-whats-wrong .section-header--underline:after {
     background-color: $orange-1;
@@ -194,7 +403,7 @@
 }
 
 .section-whos-with-us form {
-    margin-top: $spacing-unit;
+    margin-top: $spacing-unit * 4.1;
 }
 
 .section-what-can-we-do .wrapper--dashed-top {
@@ -202,5 +411,21 @@
 }
 
 .section-what-can-we-do .section-sub-header--tint {
+    color: $blue;
+}
+
+.section-humanops-mantra .section-header--underline-small:after {
+    background-color: $blue-1;
+}
+
+.section-humanops-reading .section-header--underline-small:after {
+    background-color: $blue-1;
+}
+
+.section-humanops-reading .btn {
+    margin-top: $spacing-unit;
+}
+
+.section-get-in-touch .section-sub-header--tint {
     color: $blue;
 }
