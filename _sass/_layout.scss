@@ -390,6 +390,11 @@ a.btn--github-logo {
     }
 }
 
+.stick-together {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 .section-whats-wrong .section-header--underline:after {
     background-color: $orange-1;
 }
