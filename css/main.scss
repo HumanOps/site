@@ -51,6 +51,18 @@ $spacing-unit:      1.25rem;
   }
 }
 
+// font smoothing
+@mixin font-smoothing($value: antialiased) {
+  @if $value == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)

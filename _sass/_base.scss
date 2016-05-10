@@ -15,6 +15,7 @@ dl, dd, ol, ul, figure {
  */
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    @include font-smoothing(antialiased);
     color: $black;
     background-color: $bg-color;
     -webkit-text-size-adjust: 100%;
