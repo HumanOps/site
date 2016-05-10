@@ -70,6 +70,14 @@
                 color: $bg-color;
             }
         }
+
+        @include keyframes(blink) {
+            0% { opacity: 0; }
+            50% { opacity: 0; }
+            51% { opacity: .5; }
+            100% { opacity: .5; }
+        }
+
         .terminal-cursor {
             display: inline-block;
             width: .45em;
@@ -78,6 +86,8 @@
             opacity: .5;
             vertical-align: -.15em;
             margin-left: .1em;
+
+            @include animation( blink 1.2s infinite);
         }
     }
 }
