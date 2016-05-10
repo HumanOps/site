@@ -102,7 +102,7 @@ a {
     }
 
     &.alt-link-1 {
-        color: $orange-1;
+        color: $orange;
 
         &:hover {
             color: $black;
@@ -110,7 +110,7 @@ a {
     }
 
     &.alt-link-2 {
-        color: $blue-2;
+        color: $blue-1;
 
         &:hover {
             color: $black;
@@ -118,7 +118,7 @@ a {
     }
 
     &.alt-link-3 {
-        color: $blue-3;
+        color: $blue-2;
 
         &:hover {
             color: $black;
