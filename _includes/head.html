@@ -13,4 +13,26 @@
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+    <!-- More meatadata -->
+    <meta property="og:title" content="HumanOps">
+    <meta name="description" content="HumanOps is a set of principles which focus on the human aspects of running infrastructure. The health of your infrastructure is not just about hardware, software, automations and uptime - it also includes the health and wellbeing of your team.">
+    <meta property="og:description" content="HumanOps is a set of principles which focus on the human aspects of running infrastructure. The health of your infrastructure is not just about hardware, software, automations and uptime - it also includes the health and wellbeing of your team.">
+    <meta property="og:url" content="http://www.humanops.com/">
+    <meta property="og:site_name" content="HumanOps">
+    <meta property="og:image" content="{{ "/assets/images/humanops-banner.png" | prepend: site.baseurl }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@humanops" />
+    <meta name="twitter:creator" content="@humanops" />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "HumanOps",
+        "headline": "HumanOps",
+        "description": "HumanOps is a set of principles which focus on the human aspects of running infrastructure. The health of your infrastructure is not just about hardware, software, automations and uptime - it also includes the health and wellbeing of your team.",
+        "url": "http://www.humanops.com/"
+      }
+    </script>
+
 </head>

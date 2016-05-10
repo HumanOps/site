@@ -363,6 +363,7 @@ a.btn--github-logo {
     }
 
     .article-link {
+        font-weight: 500;
         display: inline-block;
         font-size: $ms-3;
         white-space: nowrap;
@@ -413,7 +414,11 @@ a.btn--github-logo {
 }
 
 .section-whos-with-us form {
-    margin-top: $spacing-unit * 4.1;
+    margin-top: $spacing-unit * 5.4;
+}
+
+.section-whos-with-us form label {
+    margin-bottom: 0;
 }
 
 .section-what-can-we-do .wrapper--dashed-top {

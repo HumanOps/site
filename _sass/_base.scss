@@ -15,6 +15,7 @@ dl, dd, ol, ul, figure {
  */
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    @include font-smoothing(antialiased);
     color: $black;
     background-color: $bg-color;
     -webkit-text-size-adjust: 100%;
@@ -101,7 +102,7 @@ a {
     }
 
     &.alt-link-1 {
-        color: $orange-1;
+        color: $orange;
 
         &:hover {
             color: $black;
@@ -109,7 +110,7 @@ a {
     }
 
     &.alt-link-2 {
-        color: $blue-2;
+        color: $blue-1;
 
         &:hover {
             color: $black;
@@ -117,7 +118,7 @@ a {
     }
 
     &.alt-link-3 {
-        color: $blue-3;
+        color: $blue-2;
 
         &:hover {
             color: $black;
@@ -346,6 +347,12 @@ form {
                 background-color: $orange;
             }
         }
+    }
+}
+
+#boston-form {
+    input {
+        font-family: $base-font-family !important;
     }
 }
 
