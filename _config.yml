@@ -31,6 +31,7 @@ kramdown:
 gems:
     - jekyll-coffeescript
     - jekyll-paginate
+    - jekyll-sitemap
 
 # set the rendering directory to the root css/ to fix css not being rendered
 sass:
