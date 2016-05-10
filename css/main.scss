@@ -55,7 +55,7 @@ $spacing-unit:      1.25rem;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-    "bourbon",
+    "bourbon/bourbon",
     "type",
     "base",
     "layout",
