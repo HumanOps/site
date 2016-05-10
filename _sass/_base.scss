@@ -353,7 +353,23 @@ form {
 #boston-form {
     input {
         font-family: $base-font-family !important;
+
+        &:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 2px $orange-1 !important;
+        }
     }
+
+    .boston-error {
+        font-family: $base-font-family !important;
+        text-align: left !important;
+        margin-top: $spacing-unit * 1.44 !important;
+        font-style: normal !important;
+    }
+}
+
+#boston-success-element-title {
+    font-family: $base-font-family !important;
 }
 
 
