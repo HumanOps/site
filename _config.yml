@@ -13,7 +13,7 @@ description: > # this means to ignore newlines until "baseurl:"
     HumanOps is a set of principles which focus on the human aspects of running infrastructure.
     The health of your infrastructure is not just about hardware, software,
     automations and uptime - it also includes the health and wellbeing of your team.
-baseurl: "/site" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.humanops.com" # the base hostname & protocol for your site
 twitter_username: humanops
 github_username: humanops
