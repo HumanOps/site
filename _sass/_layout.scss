@@ -491,6 +491,7 @@ a.btn--github-logo {
 
             &:last-child {
                 border-bottom: none;
+                padding-bottom: 2rem;
             }
 
             > svg {
@@ -593,6 +594,25 @@ a.btn--github-logo {
 @include media-query-max(600px) {
     html {
         font-size: 12px;
+    }
+
+    .section {
+        padding-top: $spacing-unit * 4.5;
+
+        &:last-child {
+            padding-bottom: $spacing-unit * 4.5;
+        }
+
+        .wrapper {
+            padding-left: $spacing-unit * 3;
+            padding-right: $spacing-unit * 3;
+        }
+    }
+
+    .section-content {
+        &.section-content--distant {
+            margin-top: $spacing-unit;
+        }
     }
 }
 
