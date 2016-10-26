@@ -321,17 +321,18 @@ form {
         font-family: $secondary-font-family;
         color: $grey;
         font-size: $ms2;
-        margin-bottom: $spacing-unit * 2;
+        padding-bottom: $spacing-unit * 2;
     }
 
-    input {
+    input,
+    button {
         font-size: $ms1;
         font-family: $base-font-family;
         border: 1px solid $grey;
         border-radius: 3px;
         background: $bg-color;
         padding: .5em 1em;
-        margin-bottom: $spacing-unit * 1.5;
+        margin-bottom: $spacing-unit;
         box-sizing: border-box;
         outline: none;
 
