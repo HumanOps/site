@@ -5,11 +5,12 @@ sitemap: false
 
 <div class="wrapper wrapper--funneling">
 
-    <div class="l-col">
-        <header class="section-header section-header--underline">
-            <h2 class="section-title" itemprop="headline">Who's with us?</h2>
-        </header>
+    <header class="section-header section-header--underline">
+        <h2 class="section-title" itemprop="headline">Who's with us?</h2>
+    </header>
 
+    <div class="col-1-2">
+    
         <div class="section-sub-header" itemprop="subheadline">
             <p>
                 Here's a few individuals and companies involved.
@@ -31,6 +32,10 @@ sitemap: false
                     from <span>Yelp</span>.
                 </li>
                 <li class="person">
+                    <a href="https://twitter.com/saleandro" target="_blank" title="@saleandro">Sabrina Leandro</a>
+                    from <span>Songkick</span>.
+                </li>
+                <li class="person">
                     <a href="https://twitter.com/rjw1" target="_blank" title="@rjw1">Bob Walker</a>
                     from <span>GOV.UK</span>.
                 </li>
@@ -48,9 +53,9 @@ sitemap: false
         </div>
     </div>
 
-    <div class="r-col">
+    <div class="col-1-2">
         <form method="POST" action="https://serverdensity.activehosted.com/proc.php" id="_form_20_" class="_form _form_20 _inline-form  _dark" novalidate>
-            <label>// GET ON BOARD</label>
+            <label class="formTitle">// GET ON BOARD</label>
             <input type="hidden" name="u" value="20" />
             <input type="hidden" name="f" value="20" />
             <input type="hidden" name="s" />
@@ -60,11 +65,121 @@ sitemap: false
             <input type="hidden" name="v" value="2" />
             <div class="_form-content">
 
-            <input type="text" name="firstname" placeholder="First name" />
+            <div class="container clearfix">
+                <input type="text" name="firstname" placeholder="First name" />
 
-            <input type="text" name="lastname" placeholder="Last name" />
+                <input type="text" name="lastname" placeholder="Last name" />
 
-            <input type="text" name="email" placeholder="Email address" required/>
+                <input type="text" name="email" placeholder="Email address" required/>
+            </div>
+            
+            <div class="container tech_size">
+                <p>How many servers do you manage?</p>
+                <span class="cell_width">
+                    <input id="1-24" type="radio" name="field[9]" value="1-24" required>
+                    <label for="1-24">1 - 24 servers</label>
+                </span>
+
+                <span class="cell_width">
+                    <input id="25-99" type="radio" name="field[9]" value="25-99">
+                    <label for="25-99">25 - 99 servers</label>
+                </span>
+
+                <span class="cell_width">
+                    <input id="100+" type="radio" name="field[9]" value="100+">
+                    <label for="100+">100+ servers</label>
+                </span>
+            </div>
+
+            <div class="container tech_stack">
+                <p>Please highlight your tech stack?</p>
+                <span class="cell_width">
+                <label><input id="field_16Option 1" class="any" type="checkbox" name="field[16][]" value="linux" required>Linux</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 2" class="any" type="checkbox" name="field[16][]" value="windows"  required >Windows</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 3" class="any" type="checkbox" name="field[16][]" value="osx" required  >OSX</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 4" class="any"type="checkbox" name="field[16][]" value="freebsd"  required >FreeBSD</label>
+                </span>
+
+                <span class="cell_break"></span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 6" class="any" type="checkbox" name="field[16][]" value="jvm" required  >JVM</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 7" class="any" type="checkbox" name="field[16][]" value="mongodb"  required >MongoDB</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 5" class="any" type="checkbox" name="field[16][]" value="cassandra"  required >Cassandra</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 9" class="any" type="checkbox" name="field[16][]" value="redis" required  >Redis</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 10" class="any" type="checkbox" name="field[16][]" value="sqlserver" required  >SQL Server</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 8" class="any" type="checkbox" name="field[16][]" value="postgresql" required  >PostgreSQL</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 18" class="any" type="checkbox" name="field[16][]" value="mysql" required  >MySQL</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 19" class="any" type="checkbox" name="field[16][]" value="kafka" required  >Kafka</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 20" class="any" type="checkbox" name="field[16][]" value="rabbitmq"  required >RabbitMQ</label>
+                </span>
+
+                <span class="cell_break"></span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 11" class="any" type="checkbox" name="field[16][]" value="apache"  required >Apache</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 13" class="any" type="checkbox" name="field[16][]" value="nginx"  required >NGINX</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 12" class="any" type="checkbox" name="field[16][]" value="iis"  required >IIS</label>
+                </span>
+
+                <span class="cell_break"></span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 14" class="any" type="checkbox" name="field[16][]" value="ansible" required  >Ansible</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input class="any" type="checkbox" name="field[16][]" value="puppet"  required >Puppet</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 17" class="any" type="checkbox" name="field[16][]" value="saltstack"  required>Saltstack</label>
+                </span>
+
+                <span class="cell_width">
+                <label><input id="field_16Option 15" class="any" type="checkbox" name="field[16][]" value="chef"  required >Chef</label>
+                </span>
+            </div>
+
 
             <button id="_form_20_submit" class="_submit" type="submit">
                 Get HumanOps Updates

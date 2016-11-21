@@ -275,11 +275,11 @@ pre {
  */
 .l-col {
     float: left;
-    width: 55%;
+    width: 45%;
 }
 .r-col {
     float: right;
-    width: 35%;
+    width: 45%;
 }
 .col-1-3 {
     width: 30%;
@@ -321,7 +321,7 @@ form {
         font-family: $secondary-font-family;
         color: $grey;
         font-size: $ms2;
-        padding-bottom: $spacing-unit * 4;
+        padding-bottom: $spacing-unit;
     }
 
     input,
@@ -332,9 +332,10 @@ form {
         border-radius: 3px;
         background: $bg-color;
         padding: .5em 1em;
-        margin-bottom: $spacing-unit;
+        margin-bottom: 0.5rem;
         box-sizing: border-box;
         outline: none;
+        width: 100%;
 
         @include transition(background-color .15s);
 
@@ -345,6 +346,11 @@ form {
 
         &:last-child {
             margin-bottom: none;
+        }
+
+        &[name="firstname"],
+        &[name="lastname"] {
+            width: 49%;
         }
 
         &[type="submit"] {
@@ -360,6 +366,47 @@ form {
             &:active {
                 background-color: $orange;
             }
+        }
+    }
+    
+    .container {
+        margin: 1em 0;
+        position: relative;
+
+        .cell_width {
+            width: 100%;
+            display: inline-block;
+            
+            label {
+                padding-bottom: $spacing-unit/2;
+                color: #111;
+                font-size: 0.8em;
+            }
+
+            input {
+                display: inline-block;
+                width: auto;
+            }
+        }
+
+        &.tech_stack {
+            p {
+                margin-bottom: 1em;
+            }
+
+            .cell_width {
+                width: 30%;
+            }
+        }
+
+        ._error-inner {
+            position: absolute;
+            left: 0;
+            top: -1.5em;
+            background-color: red;
+            font-size: 10px;
+            color: #fff;
+            padding: 0 5px;
         }
     }
 }
