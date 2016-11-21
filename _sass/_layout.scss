@@ -546,7 +546,11 @@ a.btn--github-logo {
         margin-top: 0;
 
         label {
-            width: 100%;
+            width: 90%;
+
+            &.formTitle {
+                margin-top: 4em;
+            }
         }
     }
 
@@ -559,11 +563,13 @@ a.btn--github-logo {
 }
 
 @include media-query-range(550px, 820px) {
-    input:not([type="submit"]) {
+    input:not([type="submit"]),
+    input:not([type="radio"]),
+    input:not([type="checkbox"])
+    {
         display: inline-block !important;
-        float: left;
-        width: 30% !important;
-        margin-right: 5% !important;
+        width: 45% !important;
+        margin-right: 3% !important;
 
         &[type="email"] {
             margin-right: 0 !important;
