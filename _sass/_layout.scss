@@ -10,13 +10,6 @@
 /**
  * Site footer
  */
-.site-footer {
-    height: 0;
-    padding-bottom: 45%;
-    background: url("../assets/images/sleeping-cat-ops.jpg") no-repeat;
-    background-size: cover;
-    @include image-2x("../assets/images/sleeping-cat-ops@2x.jpg", cover, cover);
-}
 
 
 /**
