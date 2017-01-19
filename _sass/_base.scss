@@ -329,7 +329,7 @@ form {
         font-family: $base-font-family;
         border: 1px solid $grey;
         background: $bg-color;
-        padding: .5em 1em;
+        padding: .8em 1em;
         // margin-bottom: 0.5rem;
         margin-top: -1px;
         box-sizing: border-box;
@@ -373,6 +373,7 @@ form {
     }
 
     button {
+        cursor: pointer;
         border-radius: 3px;
     }
 
