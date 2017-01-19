@@ -19,12 +19,12 @@ layout: default
     </div>
   </section>
 
-
+  <div class="sections-wrapper clearfix">
       {% for section in site.sections %}
         <a name="{{ section.slug}}"></a>
-        <section class="section section-{{ section.slug }} {{ section.align }}">
+        <section class="section section-{{ section.slug }} {{ section.align }} clearfix">
             {{ section.content }}
         </section>
     {% endfor %}
-
+  </div>
 </div>

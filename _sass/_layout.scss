@@ -21,7 +21,7 @@
 .section-heading {
 
     .top {
-        margin: $spacing-unit 0 $spacing-unit * 2.5;
+        margin: 0;
     }
 
     .page-heading {
@@ -34,14 +34,14 @@
         }
 
         > svg {
-            width: 770px;
+            width: 460px;
             height: auto;
             max-width: 86%;
         }
     }
 
     .bottom {
-        padding: $spacing-unit * 2.25 0;
+        padding: $spacing-unit * 1.2 0;
         background: $black1;
         text-align: center;
     }
@@ -51,8 +51,8 @@
         margin-bottom: 0;
         text-align: left;
         font-family: $secondary-font-family;
-        font-size: $ms4;
-        padding: 0 $spacing-unit * 4;
+        font-size: $ms2;
+        padding: 0 $spacing-unit;
 
         .terminal-location {
             color: $orange;
@@ -85,15 +85,16 @@
     }
 }
 
+.sections-wrapper {
+    padding: 0 $spacing-unit;
+    margin: 0 auto;
+}
+
 .section {
-    padding-top: $spacing-unit * 6;
+    padding-top: $spacing-unit * 2;
 
     &:last-child {
         padding-bottom: $spacing-unit * 6;
-    }
-
-    .wrapper {
-        padding: 0 $spacing-unit * 4;
     }
 
     &.section--center {
@@ -114,7 +115,7 @@
     }
 
     .triangles-band {
-        margin-bottom: $spacing-unit * 3.5;
+        margin-bottom: $spacing-unit * 2;
 
         svg {
             width: auto;
@@ -123,14 +124,14 @@
         }
     }
 
-    &.wrapper--funneling {
-        .section-sub-header {
-            width: 90%;
-        }
-        .section-content {
-            width: 80%;
-        }
-    }
+    // &.wrapper--funneling {
+    //     .section-sub-header {
+    //         width: 90%;
+    //     }
+    //     .section-content {
+    //         width: 80%;
+    //     }
+    // }
 }
 
 .section-header {
@@ -138,11 +139,12 @@
 
     h2 {
         font-weight: 500;
-        font-size: $ms10;
+        font-size: $ms4;
+        line-height: 1.3em;
     }
 
     &.section-header--underline {
-        padding-bottom: $spacing-unit * 1.5;
+        padding-bottom: $spacing-unit * 0.5;
 
         &:after {
             content: '';
@@ -182,11 +184,12 @@
 }
 
 .section-sub-header {
-    margin-top: $spacing-unit * 2;
-    line-height: 2.7em;
+    margin-top: $spacing-unit;
+    line-height: 2.2em;
 
     p {
-        font-size: $ms3;
+        font-size: $ms2;
+        line-height: 1.4em;
     }
     svg {
         width: auto;
@@ -207,7 +210,7 @@
 }
 
 .section-content {
-    margin-top: $spacing-unit * 2.5;
+    margin-top: $spacing-unit;
     @extend %clearfix;
 
     &.section-content--distant {
@@ -215,13 +218,16 @@
     }
 
     p {
-        letter-spacing: 0.01em;
-        font-size: $ms1;
+        font-size: $ms0;
     }
 
     .gist {
         width: 100%;
-        margin: $spacing-unit * 3 auto 0;
+        margin: $spacing-unit * 2 auto 0;
+
+        ol {
+            margin-left: 0 !important;
+        }
     }
 }
 
@@ -300,26 +306,29 @@
 
     .username {
         font-weight: 300;
-        font-size: $ms6;
+        font-size: $ms4;
     }
 }
 
 .actions-box {
     .action-item {
+        margin: $spacing-unit * 2 0;
+
         svg {
             width: auto;
-            height: 6.25rem;
+            height: 4rem;
         }
 
         h3 {
-            margin: $spacing-unit 0;
             font-weight: 500;
-            font-size: $ms6;
+            font-size: $ms4;
+            margin-bottom: 0;
         }
 
         .item-text {
             font-weight: 300;
-            font-size: $ms2;
+            font-size: $ms1;
+            margin-bottom: 0;
 
             svg {
                 width: 24px;
@@ -330,14 +339,14 @@
         }
 
         .btn {
-            margin-top: $spacing-unit * 1.2;
+            margin-top: $spacing-unit;
             font-size: $ms0;
         }
     }
 }
 
 a.btn--github-logo {
-    margin-top: $spacing-unit * 2;
+    margin-top: $spacing-unit;
     font-size: $ms0;
 
     svg {
@@ -399,9 +408,25 @@ a.btn--github-logo {
     }
 }
 
+.gist .gist-file article {
+    padding: 1.5em 0 !important;
+}
+
 .stick-together {
     display: inline-block;
     white-space: nowrap;
+}
+
+.company-logos {
+    margin-top: $spacing-unit * 2;
+
+    .company-logo {
+        display: block;
+        width: 200px;
+        height: 112px;
+        box-sizing: border-box;
+        margin: -$spacing-unit * 2 auto $spacing-unit * 0.5;
+    }
 }
 
 .section-whats-wrong .section-header--underline:after {
@@ -417,7 +442,7 @@ a.btn--github-logo {
 }
 
 .section-whos-with-us form {
-    margin-top: $spacing-unit * 2.5;
+    margin-top: $spacing-unit;
 }
 
 .section-whos-with-us form label {
@@ -441,7 +466,7 @@ a.btn--github-logo {
 }
 
 .section-humanops-reading .btn {
-    margin-top: $spacing-unit;
+    margin-top: 0;
 }
 
 .section-get-in-touch .section-sub-header--tint {
@@ -451,78 +476,78 @@ a.btn--github-logo {
 
 
 
-
-@include media-query-max(1024px) {
-    html {
-        font-size: 15px;
-    }
-}
-
-@include media-query-max(970px) {
-    html {
-        font-size: 14px;
-    }
-}
-
-@include media-query-max(910px) {
-    html {
-        font-size: 13px;
-    }
-}
-
-@include media-query-max(880px) {
-    .col-1-3 {
-        float: none;
-        width: auto;
-        margin: 0;
-    }
-
-    .actions-box {
-        .action-item {
-            padding-bottom: 4rem;
-            border-bottom: 1px solid lighten($grey, 10%);
-
-            &:last-child {
-                border-bottom: none;
-                padding-bottom: 2rem;
-            }
-
-            > svg {
-                margin-top: $spacing-unit * 2.4;
-            }
-        }
-    }
-}
-
-@include media-query-range(600px, 880px) {
-
-    .actions-box {
-        .action-item {
-            text-align: left;
-
-            h3 {
-                margin-top: $spacing-unit * 2.56;
-            }
-
-            > svg {
-                float: left;
-                margin: $spacing-unit * .8 $spacing-unit * 2.4 $spacing-unit * 4 0;
-            }
-
-            .item-text br {
-                display: none;
-            }
-
-            &.action-item--contribute {
-                svg {
-                    width: 6.25rem;
-                }
-            }
-        }
-    }
-
-}
-
+//
+// @include media-query-max(1024px) {
+//     html {
+//         font-size: 15px;
+//     }
+// }
+//
+// @include media-query-max(970px) {
+//     html {
+//         font-size: 14px;
+//     }
+// }
+//
+// @include media-query-max(910px) {
+//     html {
+//         font-size: 13px;
+//     }
+// }
+//
+// @include media-query-max(880px) {
+//     .col-1-3 {
+//         float: none;
+//         width: auto;
+//         margin: 0;
+//     }
+//
+//     .actions-box {
+//         .action-item {
+//             padding-bottom: 4rem;
+//             border-bottom: 1px solid lighten($grey, 10%);
+//
+//             &:last-child {
+//                 border-bottom: none;
+//                 padding-bottom: 2rem;
+//             }
+//
+//             > svg {
+//                 margin-top: $spacing-unit * 2.4;
+//             }
+//         }
+//     }
+// }
+//
+// @include media-query-range(600px, 880px) {
+//
+//     .actions-box {
+//         .action-item {
+//             text-align: left;
+//
+//             h3 {
+//                 margin-top: $spacing-unit * 2.56;
+//             }
+//
+//             > svg {
+//                 float: left;
+//                 margin: $spacing-unit * .8 $spacing-unit * 2.4 $spacing-unit * 4 0;
+//             }
+//
+//             .item-text br {
+//                 display: none;
+//             }
+//
+//             &.action-item--contribute {
+//                 svg {
+//                     width: 6.25rem;
+//                 }
+//             }
+//         }
+//     }
+//
+// }
+//
 @include media-query-max(820px) {
     .l-col, .r-col {
         float: none;
@@ -550,31 +575,37 @@ a.btn--github-logo {
     .social-media-links {
         .social-item {
             display: block;
-            margin: 0 0 $spacing-unit * 1.6 0;
+            margin: 0 0 $spacing-unit 0;
         }
     }
 }
-
-@include media-query-range(550px, 820px) {
-    input:not([type="submit"]),
-    input:not([type="radio"]),
-    input:not([type="checkbox"])
-    {
-        display: inline-block !important;
-        width: 45% !important;
-        margin-right: 3% !important;
-
-        &[type="email"] {
-            margin-right: 0 !important;
-        }
-    }
-}
-
+//
+// @include media-query-range(550px, 820px) {
+//     input:not([type="submit"]),
+//     input:not([type="radio"]),
+//     input:not([type="checkbox"])
+//     {
+//         display: inline-block !important;
+//         width: 45% !important;
+//         margin-right: 3% !important;
+//
+//         &[type="email"] {
+//             margin-right: 0 !important;
+//         }
+//     }
+// }
+//
 @include media-query-max(700px) {
     .col-1-2 {
         float: none;
         width: auto;
         margin: 0;
+
+        &:last-child {
+            .article:last-child {
+                border-bottom: 0;
+            }
+        }
     }
 
     .articles {
@@ -582,41 +613,37 @@ a.btn--github-logo {
             margin: 0;
             border-bottom: 1px solid lighten($grey, 10%);
             padding: $spacing-unit;
-
-            &:last-child {
-                border-bottom: none;
-            }
         }
     }
 }
-
-@include media-query-max(600px) {
-    html {
-        font-size: 12px;
-    }
-
-    .section {
-        padding-top: $spacing-unit * 4.5;
-
-        &:last-child {
-            padding-bottom: $spacing-unit * 4.5;
-        }
-
-        .wrapper {
-            padding-left: $spacing-unit * 3;
-            padding-right: $spacing-unit * 3;
-        }
-    }
-
-    .section-content {
-        &.section-content--distant {
-            margin-top: $spacing-unit;
-        }
-    }
-}
-
-@include media-query-max(320px) {
-    html {
-        font-size: 11px;
-    }
-}
+//
+// @include media-query-max(600px) {
+//     html {
+//         font-size: 12px;
+//     }
+//
+//     .section {
+//         padding-top: $spacing-unit * 4.5;
+//
+//         &:last-child {
+//             padding-bottom: $spacing-unit * 4.5;
+//         }
+//
+//         .wrapper {
+//             padding-left: $spacing-unit * 3;
+//             padding-right: $spacing-unit * 3;
+//         }
+//     }
+//
+//     .section-content {
+//         &.section-content--distant {
+//             margin-top: $spacing-unit;
+//         }
+//     }
+// }
+//
+// @include media-query-max(320px) {
+//     html {
+//         font-size: 11px;
+//     }
+// }
