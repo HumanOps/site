@@ -27,6 +27,12 @@ $spacing-unit:      1.25rem;
 // @include media-query-max(320px) {
 //    ...
 // }
+@mixin media-query-min($min) {
+    @media screen and (min-width: $min) {
+        @content;
+    }
+}
+
 @mixin media-query-max($max) {
     @media screen and (max-width: $max) {
         @content;
