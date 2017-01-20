@@ -391,7 +391,7 @@
     }
 }
 
-@include media-query-min(700px) {
+@include media-query-min(750px) {
     .action-item {
         width: 33%;
     }
@@ -593,7 +593,7 @@ a.btn--github-logo {
                 margin: 0;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
-                border: 1px solid $orange;
+                border: 1px solid $blue;
                 position: relative;
                 left: -1px;
                 top: -1px;

@@ -357,17 +357,19 @@ form {
         }
 
         &[type="submit"] {
+            $background: $blue;
+
             border: none;
-            background-color: $orange;
+            background-color: $background;
             color: $bg-color;
             cursor: pointer;
 
             &:hover {
-                background-color: lighten($orange, 6%);
+                background-color: lighten($background, 6%);
             }
 
             &:active {
-                background-color: $orange;
+                background-color: $background;
             }
         }
     }
