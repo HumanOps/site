@@ -34,7 +34,7 @@
         }
 
         > svg {
-            width: 460px;
+            width: 500px;
             height: auto;
             max-width: 86%;
         }
@@ -91,6 +91,12 @@
     max-width: 800px;
 }
 
+@include media-query-min(400px) {
+    .sections-wrapper {
+        padding: 0 $spacing-unit * 2;
+    }
+}
+
 .section {
     padding-top: $spacing-unit * 2;
 
@@ -116,7 +122,7 @@
         font-size: $ms-3;
         letter-spacing: .1em;
         color: $grey;
-        margin-bottom: $spacing-unit * 3;
+        margin-bottom: $spacing-unit;
     }
 }
 
@@ -223,7 +229,6 @@
 }
 
 .section-content {
-    margin-top: $spacing-unit;
     @extend %clearfix;
 
     &.section-content--distant {
@@ -237,9 +242,15 @@
     .gist {
         width: 100%;
         margin: $spacing-unit * 2 auto 0;
+    }
 
-        ol {
-            margin-left: 0 !important;
+    .section-content-read-more {
+        display: block;
+        margin-top: $spacing-unit;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
         }
     }
 }
@@ -329,6 +340,18 @@
     .action-item {
         margin: $spacing-unit * 2 0 0;
 
+        &.action-item--contribute {
+            .item-text {
+                margin-top: -10px;
+            }
+        }
+
+        &.action-item--completed {
+            h3, .item-text {
+                opacity: 0.5;
+            }
+        }
+
         svg {
             width: auto;
             height: 4rem;
@@ -361,7 +384,7 @@
     }
 }
 
-@include media-query-min(450px) {
+@include media-query-min(550px) {
     .action-item {
         width: 50%;
         float: left;
@@ -386,6 +409,7 @@ a.btn--github-logo {
 }
 
 .articles {
+    margin-top: $spacing-unit * 2;
     margin-bottom: $spacing-unit * 2;
     @extend %clearfix;
 
@@ -414,29 +438,6 @@ a.btn--github-logo {
     }
 }
 
-.people-involved {
-    list-style: none;
-    margin: 0;
-    font-size: $ms0;
-
-    .person {
-        margin-bottom: .4em;
-        font-weight: 300;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        a {
-            font-weight: 400;
-        }
-
-        span {
-            font-weight: 500;
-        }
-    }
-}
-
 .gist .gist-file article {
     padding: 1.5em 0 !important;
 }
@@ -447,17 +448,30 @@ a.btn--github-logo {
 }
 
 .company-logos {
-    margin: $spacing-unit * 2 auto 0;
+    margin: $spacing-unit auto 0;
 
     .company-logo {
         display: block;
-        width: 80%;
+        width: 50%;
+        float: left;
         box-sizing: border-box;
-        margin: -$spacing-unit * 3 auto $spacing-unit * 0.5;
+        margin: -$spacing-unit auto $spacing-unit * 0.5;
 
         &.desktop-only {
             display: none;
         }
+    }
+}
+
+.section-get-involved {
+    input[name="name"] {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+    }
+
+    input[name="email"] {
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
     }
 }
 
@@ -466,26 +480,28 @@ a.btn--github-logo {
         margin-bottom: $spacing-unit;
     }
 
-    .company-logos .company-logo {
-        float: left;
-        width: 50%;
-        margin-top: -$spacing-unit * 2;
+    .company-logos {
+        margin-top: $spacing-unit * 2;
+
+        .company-logo {
+            margin-top: -$spacing-unit * 2;
+        }
     }
 }
 
-@include media-query-min(550px) {
+@include media-query-min(480px) {
+    $width: 25%;
+    $logosPerRow: 3;
+    $margin: (100 - $width * $logosPerRow) / ($logosPerRow * 2);
+
     .company-logos .company-logo {
-        width: 33%;
+        width: $width;
+        margin-left: $margin;
+        margin-right: $margin;
     }
 }
 
-@include media-query-min(780px) {
-    .company-logos .company-logo {
-        width: 16.6%;
-    }
-}
-
-@include media-query-min(615px) {
+@include media-query-min(720px) {
     .section-whats-wrong,
     .section-how-to-change {
         width: 47.5%;
@@ -508,14 +524,52 @@ a.btn--github-logo {
 @include media-query-min(500px) {
     .section-get-involved {
         input[type="text"] {
+            border-radius: 0;
             width: 50%;
             float: left;
             margin-left: -1px;
         }
 
+        input[name="name"] {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+
+        input[name="email"] {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+
         button {
             max-width: 280px;
             float: left;
+        }
+    }
+}
+
+@include media-query-min(877px) {
+    .section-get-involved {
+        form {
+            input[type="text"] {
+                width: 30%;
+            }
+
+            input[name="email"] {
+                width: 35.1%;
+                border-radius: 0;
+            }
+
+            button {
+                width: 36%;
+                float: left;
+                margin: 0;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border: 1px solid $orange;
+                position: relative;
+                left: -1px;
+                top: -1px;
+            }
         }
     }
 }
@@ -546,32 +600,6 @@ a.btn--github-logo {
 
 .section-content p.suggestion-title {
     font-size: $ms2;
-}
-
-@include media-query-min(806px) {
-    .section-get-involved {
-        form {
-            input[type="text"] {
-                width: 30%;
-            }
-
-            input[name="email"] {
-                width: 35.1%;
-            }
-
-            button {
-                width: 36%;
-                float: left;
-                margin: 0;
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-                border: 1px solid $orange;
-                position: relative;
-                left: -1px;
-                top: -1px;
-            }
-        }
-    }
 }
 
 .section-what-can-we-do .section-sub-header--tint {
@@ -672,12 +700,6 @@ a.btn--github-logo {
         width: auto;
     }
 
-    .people-involved {
-        .person {
-            display: inline-block;
-        }
-    }
-
     .section-get-involved form {
         margin-top: 0;
 
@@ -712,6 +734,8 @@ a.btn--github-logo {
     }
 
     .articles {
+        margin-top: 0;
+
         .article {
             margin: 0;
             border-bottom: 1px solid lighten($grey, 10%);
