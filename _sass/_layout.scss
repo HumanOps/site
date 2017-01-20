@@ -506,6 +506,18 @@ a.btn--github-logo {
 }
 
 @include media-query-min(480px) {
+    $width: 30%;
+    $logosPerRow: 3;
+    $margin: (100 - $width * $logosPerRow) / ($logosPerRow * 2);
+
+    .company-logos .company-logo {
+        width: $width;
+        margin-left: $margin;
+        margin-right: $margin;
+    }
+}
+
+@include media-query-min(750px) {
     $width: 25%;
     $logosPerRow: 3;
     $margin: (100 - $width * $logosPerRow) / ($logosPerRow * 2);
