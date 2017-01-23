@@ -226,27 +226,11 @@ pre {
 }
 
 
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    box-sizing: border-box;
-    @extend %clearfix;
-}
-
-
-
 /**
  * Clearfix
  */
-%clearfix {
+%clearfix,
+.clearfix {
 
     &:after {
         content: "";
@@ -329,19 +313,23 @@ form {
         font-size: $ms1;
         font-family: $base-font-family;
         border: 1px solid $grey;
-        border-radius: 3px;
         background: $bg-color;
-        padding: .5em 1em;
-        margin-bottom: 0.5rem;
+        padding: .8em 1em;
+        margin-top: -1px;
         box-sizing: border-box;
         outline: none;
         width: 100%;
+        height: 57px;
+        position: relative;
+        z-index: 0;
 
         @include transition(background-color .15s);
 
         &:focus {
             outline: none;
             box-shadow: 0 0 0 2px $orange-1;
+            border-color: #ffae58;
+            z-index: 2;
         }
 
         &:last-child {
@@ -354,21 +342,28 @@ form {
         }
 
         &[type="submit"] {
+            $background: $blue;
+
             border: none;
-            background-color: $orange;
+            background-color: $background;
             color: $bg-color;
             cursor: pointer;
 
             &:hover {
-                background-color: lighten($orange, 6%);
+                background-color: lighten($background, 6%);
             }
 
             &:active {
-                background-color: $orange;
+                background-color: $background;
             }
         }
     }
-    
+
+    button {
+        cursor: pointer;
+        border-radius: 3px;
+    }
+
     .container {
         margin: 1em 0;
         position: relative;
@@ -376,7 +371,7 @@ form {
         .cell_width {
             width: 100%;
             display: inline-block;
-            
+
             label {
                 padding-bottom: $spacing-unit/2;
                 color: #111;
@@ -432,8 +427,3 @@ form {
 #boston-success-element-title {
     font-family: $base-font-family !important;
 }
-
-
-
-
-
