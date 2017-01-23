@@ -25,18 +25,38 @@
     }
 
     .page-heading {
-        text-align: center;
+        $width: 500px;
 
-        span {
+        text-align: center;
+        padding-bottom: 1rem;
+
+        .alt-title {
             display: block;
             text-indent: -9999px;
             height: 0;
         }
 
-        > svg {
-            width: 500px;
-            height: auto;
+        .logo {
             max-width: 86%;
+            width: $width;
+            margin: 0 auto;
+            position: relative;
+
+            .powered-by {
+                display: block;
+                font-size: 0.6em;
+                width: 100%;
+                margin: 0 auto;
+                text-align: left;
+                position: absolute;
+                left: 6%;
+                bottom: 19%;
+            }
+
+            > svg {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 
@@ -52,7 +72,7 @@
         text-align: left;
         font-family: $secondary-font-family;
         font-size: $ms2;
-        padding: 0 $spacing-unit;
+        padding: 0 $spacing-unit * 2;
 
         .terminal-location {
             color: $orange;
@@ -569,7 +589,7 @@ a.btn--github-logo {
         }
 
         button {
-            max-width: 280px;
+            max-width: 282px;
             float: left;
         }
     }
@@ -583,7 +603,7 @@ a.btn--github-logo {
             }
 
             input[name="email"] {
-                width: 35.1%;
+                width: 35%;
                 border-radius: 0;
             }
 
