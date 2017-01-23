@@ -10,13 +10,6 @@
 /**
  * Site footer
  */
-.site-footer {
-    height: 0;
-    padding-bottom: 45%;
-    background: url("../assets/images/sleeping-cat-ops.jpg") no-repeat;
-    background-size: cover;
-    @include image-2x("../assets/images/sleeping-cat-ops@2x.jpg", cover, cover);
-}
 
 
 /**
@@ -28,27 +21,47 @@
 .section-heading {
 
     .top {
-        margin: $spacing-unit 0 $spacing-unit * 2.5;
+        margin: 0;
     }
 
     .page-heading {
-        text-align: center;
+        $width: 600px;
 
-        span {
+        text-align: center;
+        padding-bottom: 1rem;
+
+        .alt-title {
             display: block;
             text-indent: -9999px;
             height: 0;
         }
 
-        > svg {
-            width: 770px;
-            height: auto;
+        .logo {
             max-width: 86%;
+            width: $width;
+            margin: 0 auto;
+            position: relative;
+
+            .powered-by {
+                display: block;
+                font-size: 0.6em;
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+                position: absolute;
+                bottom: 10%;
+                background: $bg-color;
+            }
+
+            > svg {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 
     .bottom {
-        padding: $spacing-unit * 2.25 0;
+        padding: $spacing-unit * 1.2 0;
         background: $black1;
         text-align: center;
     }
@@ -58,8 +71,8 @@
         margin-bottom: 0;
         text-align: left;
         font-family: $secondary-font-family;
-        font-size: $ms4;
-        padding: 0 $spacing-unit * 4;
+        font-size: $ms2;
+        padding: 0 $spacing-unit * 2;
 
         .terminal-location {
             color: $orange;
@@ -92,15 +105,29 @@
     }
 }
 
+@include media-query-min(500px) {
+    .section-heading .page-heading .logo .powered-by {
+        bottom: 18%;
+    }
+}
+
+.sections-wrapper {
+    padding: 0 $spacing-unit;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+@include media-query-min(400px) {
+    .sections-wrapper {
+        padding: 0 $spacing-unit * 2;
+    }
+}
+
 .section {
-    padding-top: $spacing-unit * 6;
+    padding-top: $spacing-unit * 2;
 
     &:last-child {
         padding-bottom: $spacing-unit * 6;
-    }
-
-    .wrapper {
-        padding: 0 $spacing-unit * 4;
     }
 
     &.section--center {
@@ -114,6 +141,27 @@
     }
 }
 
+.section-whos-with-us {
+    .section-title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: $ms-3;
+        letter-spacing: .1em;
+        color: $grey;
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.section-what-can-we-do {
+    .section-sub-header {
+        max-width: 500px;
+    }
+}
+
+.section-humanops-mantra {
+    padding-top: $spacing-unit * 3;
+}
+
 .wrapper {
     &.wrapper--dashed-top {
         padding-top: $spacing-unit * 5;
@@ -121,21 +169,12 @@
     }
 
     .triangles-band {
-        margin-bottom: $spacing-unit * 3.5;
+        margin-bottom: $spacing-unit * 2;
 
         svg {
             width: auto;
             height: auto;
             max-width: 100%;
-        }
-    }
-
-    &.wrapper--funneling {
-        .section-sub-header {
-            width: 90%;
-        }
-        .section-content {
-            width: 80%;
         }
     }
 }
@@ -145,11 +184,12 @@
 
     h2 {
         font-weight: 500;
-        font-size: $ms10;
+        font-size: $ms5;
+        line-height: 1.3em;
     }
 
     &.section-header--underline {
-        padding-bottom: $spacing-unit * 1.5;
+        padding-bottom: $spacing-unit * 0.5;
 
         &:after {
             content: '';
@@ -189,11 +229,12 @@
 }
 
 .section-sub-header {
-    margin-top: $spacing-unit * 2;
-    line-height: 2.7em;
+    margin-top: $spacing-unit;
+    line-height: 2.2em;
 
     p {
-        font-size: $ms3;
+        font-size: $ms2;
+        line-height: 1.4em;
     }
     svg {
         width: auto;
@@ -214,7 +255,6 @@
 }
 
 .section-content {
-    margin-top: $spacing-unit * 2.5;
     @extend %clearfix;
 
     &.section-content--distant {
@@ -222,13 +262,22 @@
     }
 
     p {
-        letter-spacing: 0.01em;
-        font-size: $ms1;
+        font-size: $ms0;
     }
 
     .gist {
         width: 100%;
-        margin: $spacing-unit * 3 auto 0;
+        margin: $spacing-unit * 2 auto 0;
+    }
+
+    .section-content-read-more {
+        display: block;
+        margin-top: $spacing-unit;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
 
@@ -307,26 +356,44 @@
 
     .username {
         font-weight: 300;
-        font-size: $ms6;
+        font-size: $ms4;
     }
 }
 
 .actions-box {
+    max-width: 800px;
+
     .action-item {
+        margin: $spacing-unit * 2 0 0;
+
+        &.action-item--contribute {
+            .item-text {
+                margin-top: -10px;
+            }
+        }
+
+        &.action-item--completed {
+            h3, .item-text {
+                opacity: 0.5;
+            }
+        }
+
         svg {
             width: auto;
-            height: 6.25rem;
+            height: 4rem;
+            margin-top: -.6em;
         }
 
         h3 {
-            margin: $spacing-unit 0;
             font-weight: 500;
-            font-size: $ms6;
+            font-size: $ms4;
+            margin-bottom: 0;
         }
 
         .item-text {
             font-weight: 300;
-            font-size: $ms2;
+            font-size: $ms1;
+            margin-bottom: 0;
 
             svg {
                 width: 24px;
@@ -337,14 +404,27 @@
         }
 
         .btn {
-            margin-top: $spacing-unit * 1.2;
+            margin-top: $spacing-unit;
             font-size: $ms0;
         }
     }
 }
 
+@include media-query-min(550px) {
+    .action-item {
+        width: 50%;
+        float: left;
+    }
+}
+
+@include media-query-min(750px) {
+    .action-item {
+        width: 33%;
+    }
+}
+
 a.btn--github-logo {
-    margin-top: $spacing-unit * 2;
+    margin-top: $spacing-unit;
     font-size: $ms0;
 
     svg {
@@ -354,7 +434,24 @@ a.btn--github-logo {
     }
 }
 
+.run-your-own-event {
+    margin-top: $spacing-unit * 3;
+    text-align: center;
+    font-size: $ms1;
+    color: $black1;
+
+    padding: $spacing-unit;
+    border: 1px solid #ddd;
+    border-left: 0;
+    border-right: 0;
+
+    a {
+        color: $blue;
+    }
+}
+
 .articles {
+    margin-top: $spacing-unit * 2;
     margin-bottom: $spacing-unit * 2;
     @extend %clearfix;
 
@@ -383,32 +480,152 @@ a.btn--github-logo {
     }
 }
 
-.people-involved {
-    list-style: none;
-    margin: 0;
-    font-size: $ms0;
-
-    .person {
-        margin-bottom: .4em;
-        font-weight: 300;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        a {
-            font-weight: 400;
-        }
-
-        span {
-            font-weight: 500;
-        }
-    }
+.gist .gist-file article {
+    padding: 1.5em 0 !important;
 }
 
 .stick-together {
     display: inline-block;
     white-space: nowrap;
+}
+
+.company-logos {
+    margin: $spacing-unit auto 0;
+
+    .company-logo {
+        display: block;
+        width: 50%;
+        float: left;
+        box-sizing: border-box;
+        margin: -$spacing-unit auto $spacing-unit * 0.5;
+
+        &.desktop-only {
+            display: none;
+        }
+    }
+}
+
+.section-get-involved {
+    input[name="fullname"] {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+    }
+
+    input[name="email"] {
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+    }
+}
+
+@include media-query-min(350px) {
+    .section-whos-with-us .section-title {
+        margin-bottom: $spacing-unit;
+    }
+
+    .company-logos {
+        margin-top: $spacing-unit * 2;
+
+        .company-logo {
+            margin-top: -$spacing-unit * 2;
+        }
+    }
+}
+
+@include media-query-min(480px) {
+    $width: 30%;
+    $logosPerRow: 3;
+    $margin: (100 - $width * $logosPerRow) / ($logosPerRow * 2);
+
+    .company-logos .company-logo {
+        width: $width;
+        margin-left: $margin;
+        margin-right: $margin;
+    }
+}
+
+@include media-query-min(750px) {
+    $width: 25%;
+    $logosPerRow: 3;
+    $margin: (100 - $width * $logosPerRow) / ($logosPerRow * 2);
+
+    .company-logos .company-logo {
+        width: $width;
+        margin-left: $margin;
+        margin-right: $margin;
+    }
+}
+
+@include media-query-min(720px) {
+    .section-whats-wrong,
+    .section-how-to-change {
+        width: 47.5%;
+        float: left;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .section-whats-wrong {
+        margin-right: 5%;
+    }
+
+    .section-get-involved {
+        clear: both;
+    }
+}
+
+@include media-query-min(500px) {
+    .section-get-involved {
+        input[type="text"] {
+            border-radius: 0;
+            width: 50%;
+            float: left;
+            margin-left: -1px;
+        }
+
+        input[name="fullname"] {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+
+        input[name="email"] {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+
+        button {
+            max-width: 282px;
+            float: left;
+        }
+    }
+}
+
+@include media-query-min(877px) {
+    .section-get-involved {
+        form {
+            input[type="text"] {
+                width: 30%;
+            }
+
+            input[name="email"] {
+                width: 35%;
+                border-radius: 0;
+            }
+
+            button {
+                width: 36%;
+                float: left;
+                margin: 0;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border: 1px solid $blue;
+                position: relative;
+                left: -1px;
+                top: -1px;
+            }
+        }
+    }
 }
 
 .section-whats-wrong .section-header--underline:after {
@@ -419,20 +636,24 @@ a.btn--github-logo {
     background-color: $blue-3;
 }
 
-.section-whos-with-us .section-header--underline:after {
+.section-get-involved .section-header--underline:after {
     background-color: $blue-1;
 }
 
-.section-whos-with-us form {
-    margin-top: $spacing-unit * 2.5;
+.section-get-involved form {
+    margin-top: $spacing-unit;
 }
 
-.section-whos-with-us form label {
+.section-get-involved form label {
     margin-bottom: 0;
 }
 
-.section-what-can-we-do .wrapper--dashed-top {
-    border-color: $blue-1;
+.section-get-involved button {
+    margin-top: $spacing-unit;
+}
+
+.section-content p.suggestion-title {
+    font-size: $ms2;
 }
 
 .section-what-can-we-do .section-sub-header--tint {
@@ -448,86 +669,11 @@ a.btn--github-logo {
 }
 
 .section-humanops-reading .btn {
-    margin-top: $spacing-unit;
+    margin-top: 0;
 }
 
 .section-get-in-touch .section-sub-header--tint {
     color: $blue;
-}
-
-
-
-
-
-@include media-query-max(1024px) {
-    html {
-        font-size: 15px;
-    }
-}
-
-@include media-query-max(970px) {
-    html {
-        font-size: 14px;
-    }
-}
-
-@include media-query-max(910px) {
-    html {
-        font-size: 13px;
-    }
-}
-
-@include media-query-max(880px) {
-    .col-1-3 {
-        float: none;
-        width: auto;
-        margin: 0;
-    }
-
-    .actions-box {
-        .action-item {
-            padding-bottom: 4rem;
-            border-bottom: 1px solid lighten($grey, 10%);
-
-            &:last-child {
-                border-bottom: none;
-                padding-bottom: 2rem;
-            }
-
-            > svg {
-                margin-top: $spacing-unit * 2.4;
-            }
-        }
-    }
-}
-
-@include media-query-range(600px, 880px) {
-
-    .actions-box {
-        .action-item {
-            text-align: left;
-
-            h3 {
-                margin-top: $spacing-unit * 2.56;
-            }
-
-            > svg {
-                float: left;
-                margin: $spacing-unit * .8 $spacing-unit * 2.4 $spacing-unit * 4 0;
-            }
-
-            .item-text br {
-                display: none;
-            }
-
-            &.action-item--contribute {
-                svg {
-                    width: 6.25rem;
-                }
-            }
-        }
-    }
-
 }
 
 @include media-query-max(820px) {
@@ -536,13 +682,7 @@ a.btn--github-logo {
         width: auto;
     }
 
-    .people-involved {
-        .person {
-            display: inline-block;
-        }
-    }
-
-    .section-whos-with-us form {
+    .section-get-involved form {
         margin-top: 0;
 
         label {
@@ -557,22 +697,7 @@ a.btn--github-logo {
     .social-media-links {
         .social-item {
             display: block;
-            margin: 0 0 $spacing-unit * 1.6 0;
-        }
-    }
-}
-
-@include media-query-range(550px, 820px) {
-    input:not([type="submit"]),
-    input:not([type="radio"]),
-    input:not([type="checkbox"])
-    {
-        display: inline-block !important;
-        width: 45% !important;
-        margin-right: 3% !important;
-
-        &[type="email"] {
-            margin-right: 0 !important;
+            margin: 0 0 $spacing-unit 0;
         }
     }
 }
@@ -582,48 +707,21 @@ a.btn--github-logo {
         float: none;
         width: auto;
         margin: 0;
+
+        &:last-child {
+            .article:last-child {
+                border-bottom: 0;
+            }
+        }
     }
 
     .articles {
+        margin-top: 0;
+
         .article {
             margin: 0;
             border-bottom: 1px solid lighten($grey, 10%);
             padding: $spacing-unit;
-
-            &:last-child {
-                border-bottom: none;
-            }
         }
-    }
-}
-
-@include media-query-max(600px) {
-    html {
-        font-size: 12px;
-    }
-
-    .section {
-        padding-top: $spacing-unit * 4.5;
-
-        &:last-child {
-            padding-bottom: $spacing-unit * 4.5;
-        }
-
-        .wrapper {
-            padding-left: $spacing-unit * 3;
-            padding-right: $spacing-unit * 3;
-        }
-    }
-
-    .section-content {
-        &.section-content--distant {
-            margin-top: $spacing-unit;
-        }
-    }
-}
-
-@include media-query-max(320px) {
-    html {
-        font-size: 11px;
     }
 }
