@@ -506,7 +506,7 @@ a.btn--github-logo {
 }
 
 .section-get-involved {
-    input[name="name"] {
+    input[name="fullname"] {
         border-top-left-radius: $border-radius;
         border-top-right-radius: $border-radius;
     }
@@ -584,7 +584,7 @@ a.btn--github-logo {
             margin-left: -1px;
         }
 
-        input[name="name"] {
+        input[name="fullname"] {
             border-top-left-radius: $border-radius;
             border-bottom-left-radius: $border-radius;
         }
