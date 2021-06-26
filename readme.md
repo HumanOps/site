@@ -1,3 +1,8 @@
+# DEPRECATED
+This repository is no longer in use.
+
+The HumanOps website source can now be found here: https://github.com/HumanOps/humanops.com
+
 # The HumanOps website
 
 This is the public repo for the HumanOps website.
